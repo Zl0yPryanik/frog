@@ -802,16 +802,18 @@
             <button id="navMinigames">Мини-игры</button>
         </div>
 
-        <!-- Кликер страница -->
+        <!-- Страница кликера - ТОЛЬКО ЗДЕСЬ ЕСТЬ КНОПКА -->
         <div id="clicker-page" class="page active">
-            <button id="clickerBtn" class="click-button">
-                <img src="idle.png" alt="Jabba static" id="staticImage">
-                <img src="Jabba.gif" alt="Jabba animated" id="animatedImage">
-            </button>
-            <div class="click-hint" id="clickRewardHint">+1 за клик</div>
+            <div class="clicker-content">
+                <button id="clickerBtn" class="click-button">
+                    <img src="idle.png" alt="Jabba static" id="staticImage">
+                    <img src="Jabba.gif" alt="Jabba animated" id="animatedImage">
+                </button>
+                <div class="click-hint" id="clickRewardHint">+1 за клик</div>
+            </div>
         </div>
 
-        <!-- Магазин страница -->
+        <!-- Страница магазина -->
         <div id="shop-page" class="page">
             <div class="shop-section">
                 <h2>⚡ Улучшения</h2>
@@ -843,7 +845,7 @@
             </div>
         </div>
 
-        <!-- Мини-игры страница -->
+        <!-- Страница мини-игр -->
         <div id="minigames-page" class="page">
             <div class="minigames-grid">
                 <div class="minigame-banner large" id="wordleBanner">
@@ -1420,11 +1422,9 @@
                 
                 path.push({ row: currentRow, col: currentCol });
                 
-                // Генерируем путь с уникальными направлениями на каждом шаге
                 while (currentRow > 0) {
                     const possibleMoves = [];
                     
-                    // Проверяем каждое направление
                     if (currentRow > 0) {
                         possibleMoves.push({ row: currentRow - 1, col: currentCol, dir: 'up' });
                     }
@@ -1441,7 +1441,6 @@
                         possibleMoves.push({ row: currentRow + 1, col: currentCol, dir: 'down' });
                     }
                     
-                    // Убираем возврат на предыдущую клетку
                     const validMoves = possibleMoves.filter(move => {
                         if (path.length > 1) {
                             const prevPos = path[path.length - 2];
@@ -1452,13 +1451,11 @@
                         return true;
                     });
                     
-                    // Выбираем одно направление
                     let selectedMove;
                     
                     if (validMoves.length === 0) {
                         selectedMove = { row: currentRow - 1, col: currentCol };
                     } else {
-                        // Приоритет вверх
                         const upMove = validMoves.find(m => m.dir === 'up');
                         if (upMove && validMoves.length > 1 && Math.random() < 0.6) {
                             selectedMove = upMove;
@@ -1474,7 +1471,6 @@
                     if (path.length > 20) break;
                 }
                 
-                // Добираем до верха если нужно
                 const last = path[path.length - 1];
                 if (last.row !== 0) {
                     for (let r = last.row - 1; r >= 0; r--) {
