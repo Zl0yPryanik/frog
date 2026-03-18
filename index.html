@@ -40,8 +40,6 @@
             overflow-y: auto;
             box-shadow: 0 20px 40px rgba(0,0,0,0.5);
             border: 1px solid rgba(255,255,255,0.1);
-            display: flex;
-            flex-direction: column;
         }
         
         .game-container::-webkit-scrollbar {
@@ -71,7 +69,6 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 10px;
-            flex-shrink: 0;
         }
         
         .balance h2 {
@@ -97,7 +94,6 @@
             margin-bottom: 15px;
             justify-content: center;
             flex-wrap: wrap;
-            flex-shrink: 0;
         }
         
         .nav button {
@@ -127,9 +123,6 @@
             padding: 20px;
             border: 2px solid #4a6172;
             box-shadow: inset 0 0 15px rgba(0,0,0,0.6), 0 8px 0 #17222b;
-            flex: 1;
-            overflow-y: auto;
-            min-height: 0;
         }
         
         .page.active {
@@ -140,8 +133,9 @@
             text-align: center;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            min-height: 300px;
         }
         
         .click-button {
@@ -154,7 +148,7 @@
             cursor: pointer;
             box-shadow: 0 15px 0 #b36b0e, 0 20px 25px rgba(0,0,0,0.5);
             transition: 0.07s;
-            margin: 10px auto;
+            margin: 20px auto;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -802,7 +796,7 @@
             <button id="navMinigames">Мини-игры</button>
         </div>
 
-        <!-- Страница кликера - ТОЛЬКО ЗДЕСЬ ЕСТЬ КНОПКА -->
+        <!-- Страница кликера -->
         <div id="clicker-page" class="page active">
             <button id="clickerBtn" class="click-button">
                 <img src="idle.png" alt="Jabba static" id="staticImage">
@@ -811,7 +805,7 @@
             <div class="click-hint" id="clickRewardHint">+1 за клик</div>
         </div>
 
-        <!-- Страница магазина - ТОЛЬКО МАГАЗИН, БЕЗ КНОПКИ -->
+        <!-- Страница магазина -->
         <div id="shop-page" class="page">
             <div class="shop-section">
                 <h2>⚡ Улучшения</h2>
@@ -843,7 +837,7 @@
             </div>
         </div>
 
-        <!-- Страница мини-игр - ТОЛЬКО МИНИ-ИГРЫ, БЕЗ КНОПКИ -->
+        <!-- Страница мини-игр -->
         <div id="minigames-page" class="page">
             <div class="minigames-grid">
                 <div class="minigame-banner large" id="wordleBanner">
@@ -866,7 +860,7 @@
         </div>
     </div>
 
-    <!-- Wordle Modal - ТОЛЬКО WORDLE -->
+    <!-- Wordle Modal -->
     <div class="modal" id="wordleModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -882,7 +876,7 @@
         </div>
     </div>
 
-    <!-- Lilypad Game Modal - ТОЛЬКО КУВШИНКИ -->
+    <!-- Lilypad Game Modal -->
     <div class="modal" id="lilypadModal">
         <div class="modal-content">
             <div class="modal-header">
